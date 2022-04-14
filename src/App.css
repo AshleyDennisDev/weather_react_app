@@ -1,38 +1,40 @@
 .App {
   text-align: center;
+  background-image: url('../public/sunny_sky.jpg');
+  background-size: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* .search-box{
+} */
+
+.search-bar{
+  height: 3rem;
+  width: 20rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  font-size: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.location{
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.date{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+
 }
 
-.App-link {
-  color: #61dafb;
+.temp{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
