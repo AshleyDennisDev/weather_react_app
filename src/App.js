@@ -13,7 +13,7 @@ const [weather, setWeather] = useState('')
 
 const search = event => {
   if(event.key === "Enter"){
-    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+    fetch(`${api.base}weather?q=${query}&units=imperial&metric&APPID=${api.key}`)
     .then(response => response.json())
     .then(result => {
       setWeather(result);
@@ -32,28 +32,29 @@ const search = event => {
     let month = months[d.getMonth()]
     let year = d.getFullYear()
 
-    return `${day} ${date} ${month} ${year}`
+    return `${day} ${month} ${date}, ${year}`
   }
   return (
     <div className="App">
+      <header className="header">Today's Weather Forecast</header>
     <main>
       <div className="search-box">
-    <input type="text" className="search-bar" placeHolder=" Search..."
+    <input type="text" className="search-bar" placeHolder=" Search by City..."
     onChange={event => setQuery(event.target.value)}
     value= {query}
     onKeyPress={search}
     /> 
       </div>
       {(typeof weather.main != "undefined") ? (
-        <div>
-      <div className="location-box">
+        <div className="weather-box">
+      <div >
         <div className="location"> {weather.name}, {weather.sys.country}</div> 
         <div className="date">{dateBuilder(new Date())}</div>
       
         </div>
 
-        <div className="weather-box">
-          <div className="temp"> {weather.main.temp}</div>
+        <div>
+          <div className="temp"> {weather.main.temp} ºF</div>
           <div className="weather"> {weather.weather[0].main}</div>
         </div>
         </div>
