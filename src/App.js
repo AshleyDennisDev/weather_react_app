@@ -60,7 +60,6 @@ const search = event => {
         </div>
         ) : ('')}
     </main>
- 
     </div>
   );
 }
